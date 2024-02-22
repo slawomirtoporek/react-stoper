@@ -30,6 +30,7 @@ const Stopwatch = () => {
   
   return (
     <Container>
+      <FormattingTime millisec={time}/>
       <Button onClick={startTimer}>Start</Button>
       <Button onClick={stopTimer}>Stop</Button>
       <Button onClick={resetTimer}>reset</Button>
