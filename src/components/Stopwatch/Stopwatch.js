@@ -2,6 +2,7 @@ import Button from '../Button/Button';
 import Container from '../Container/Container';
 import FormattingTime from '../FormattingTime/FormattingTime';
 import { useEffect, useState } from 'react'; 
+import styles from './Stopwatch.module.scss';
 
 const Stopwatch = () => {
   const [time, setTime] = useState(0);
@@ -24,16 +25,18 @@ const Stopwatch = () => {
 
   useEffect(() => {
     return () => {
-      clearInterval(timer);
+      if(timer) clearInterval(timer);
     };
   }, []);
   
   return (
     <Container>
       <FormattingTime millisec={time}/>
-      <Button onClick={startTimer}>Start</Button>
-      <Button onClick={stopTimer}>Stop</Button>
-      <Button onClick={resetTimer}>reset</Button>
+      <div className={styles.buttonWrapper}>
+        <Button onClick={startTimer}>Start</Button>
+        <Button onClick={stopTimer}>Stop</Button>
+        <Button onClick={resetTimer}>reset</Button>
+      </div>
     </Container>
   );
 }

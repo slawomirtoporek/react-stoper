@@ -1,6 +1,8 @@
+import styles from './Container.module.scss';
+
 const Container = (props) => {
     return (
-    <div>{props.children}</div>
+    <div className={styles.container}>{props.children}</div>
     );
 };
 

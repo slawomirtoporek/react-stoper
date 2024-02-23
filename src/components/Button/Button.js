@@ -1,7 +1,9 @@
+import styles from './Button.module.scss'
+
 const Button = props => {
 
   return(
-    <button onClick={props.onClick}>{props.children}</button>
+    <button className={styles.btn} onClick={props.onClick}>{props.children}</button>
   );
 };
 
